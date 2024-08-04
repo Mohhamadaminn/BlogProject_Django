@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    Website: Post Delete
+{% endblock page_title %}
+
+{% block page_content %}
+    <h1>make sure !</h1>
+    <p>are you sure that want delete {{ post.title }} Post ?</p>
+    <form action="" method="POST">   <!--action specifies where to send the form-data when a form is submitted-->
+                                    <!--when its empty, then back rendred file (post_delete_view)-->
+        {% csrf_token %}
+        <input class= 'btn btn-danger' type="submit" value="yes, im sure.">
+    </form>
+{% endblock page_content %}
