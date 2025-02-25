@@ -4,6 +4,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 
 
+
 class PostsListView(generic.ListView):
     # with below command database give you all objects, but we dont want this.
     # model = Post --> if this model dont define then go to get_queryset function.
@@ -34,7 +35,10 @@ class PostUpdateView(generic.UpdateView):
 class PostDeleteView(generic.DeleteView):
     model = Post
     template_name = 'blog/post_delete.html'
-    success_url = reverse_lazy('posts_list')       # Redirect
+    success_url = reverse_lazy('posts_list') 
+
+
+
 
 
 
