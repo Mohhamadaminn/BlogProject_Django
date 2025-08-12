@@ -6,10 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-     <form action="" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button  class="btn btn-success" type="submit">Sign Up</button>
-    </form>    
+
+    <h3>you are logged out!</h3>
+    <p>want to login?</p>
+    <h3><a href="{% url 'login' %}">LOG IN</a></h3>
+    <p>want to Signup?</p>
+    <h3><a href="{% url 'signup' %}">SIGN UP</a></h3>
+
 </body>
 </html>

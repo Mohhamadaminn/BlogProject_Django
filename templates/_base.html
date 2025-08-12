@@ -64,10 +64,13 @@
             <div class="mx-2 text-white">
            
                 {% if user.is_authenticated %}
-                    Welcome {{ user.username }} ---
-                    <button>
-                        <a style="text-decoration: none;" class="text-light" href="{% url 'logout' %}">Log Out</a>
-                    </button>
+                    <span style="color: black;">Welcome {{ user.username }} ---</span> 
+                    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" style="text-decoration: none; color: white;" class="text-light">
+                            Log Out
+                        </button>
+                    </form>
                 {% else %}
                     <button>
                         <a  style="text-decoration: none;" class="text-light" href="{% url 'login' %}">Log In</a>
